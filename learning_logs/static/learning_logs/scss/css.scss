@@ -1,0 +1,164 @@
+
+*{margin: 0; padding: 0px;}
+
+body{
+    font-family: "Noto Sans";
+    letter-spacing: 1px;
+    line-height: 45px;
+}
+
+html,
+body {
+    height: 100%;
+  }
+
+a{text-decoration: none;}
+
+nav a:visited{color: rgb(252, 250, 250);}
+
+nav a:hover{color: rgb(129, 129, 129);}
+
+section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header{
+    flex: 0 0 auto;
+    background-color: rgba(51, 51, 51, 0.712);
+    padding-left: 5px;
+    font-size: 15px;
+    line-height: 30px;
+
+}
+
+article{
+    flex: 1 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    padding-top: 3%;
+    font-size: 25px;
+}
+
+footer{
+    flex: 0 0 auto;
+    background-color: rgba(51, 51, 51, 0.712);
+    text-align: center;
+    font-size: 20px;
+    color: rgb(252, 250, 250);
+    padding: 7px;
+}
+
+// header{
+//     height: auto;
+//     background-color: rgba(51, 51, 51, 0.712);
+//     padding-left: 5px;
+//     font-size: 25px;
+// }
+
+// article{
+//     padding-left: 5%;
+//     padding-right: 5%;
+//     padding-bottom: 5%;
+//     font-size: 38px;
+// }
+
+// footer{
+//     margin: 0px;
+//     height: auto;
+//     background-color: rgba(51, 51, 51, 0.712);
+//     text-align: center;
+//     font-size: 25px;
+//     position: fixed;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 7%;
+//     color: rgb(252, 250, 250);
+// }
+
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+
+
+.start{
+    font-size: 90px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.options{
+    max-width: 50%;
+    margin: 0px auto;
+
+}
+figure{
+    border: solid 7px rgb(10, 5, 5);
+    height: auto;
+    display: inline-block;
+    padding-top: 2%;
+    margin: 4.5%;
+}
+
+figure:hover{
+    border: solid 5px rgba(51, 51, 51, 0.712);
+}
+
+
+.github{
+    max-height: 55px;
+    max-width: 55px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+/* forma */
+h3{
+    font-size: 24px;
+    color: black;
+}
+
+input{
+    margin: 0px;
+    font-size: 19px;
+    padding: 5px;
+}
+
+.headf{
+    width: 20%;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+
+.textf{
+    height: 350px;
+    width: 98.5%;
+    resize: none;
+    font-size: 19px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.main-button{
+    display: block;
+    font-size: 17px;
+    border: solid 2px gray;
+    border-radius: 10px 10px;
+    padding: 3px;
+    margin: 5px;
+
+}
+
+.add_entry_or_edit{
+    margin: auto;
+}
+
+.date{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}   

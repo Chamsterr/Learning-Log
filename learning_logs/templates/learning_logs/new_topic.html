@@ -1,0 +1,14 @@
+{% extends "learning_logs/base.html" %}
+
+{% block title %}New topic{% endblock title %}
+{% block nav %}/ <a href="">New topic</a>{% endblock nav %}
+
+{% block content %}
+    <h2>New Topic</h2>
+    <form action="{% url 'learning_logs:new_topic' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="text" class="headf" placeholder="Heading" required id="id_text">
+
+        <button type="submit" class="main-button">Submit</button>
+    </form>
+{% endblock content%}
