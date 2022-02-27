@@ -13,6 +13,9 @@ body {
   }
 
 a{text-decoration: none;}
+nav{
+    grid-area: nav;
+}
 
 nav a:visited{color: rgb(252, 250, 250);}
 
@@ -30,7 +33,13 @@ header{
     padding-left: 5px;
     font-size: 15px;
     line-height: 30px;
+    position: relative;
 
+}
+.grid{
+    display: grid;
+    grid-template-areas: "nav greeting login_logout";
+    grid-template-columns: 50% 1fr 70px; 
 }
 
 article{
@@ -51,33 +60,6 @@ footer{
     padding: 7px;
 }
 
-// header{
-//     height: auto;
-//     background-color: rgba(51, 51, 51, 0.712);
-//     padding-left: 5px;
-//     font-size: 25px;
-// }
-
-// article{
-//     padding-left: 5%;
-//     padding-right: 5%;
-//     padding-bottom: 5%;
-//     font-size: 38px;
-// }
-
-// footer{
-//     margin: 0px;
-//     height: auto;
-//     background-color: rgba(51, 51, 51, 0.712);
-//     text-align: center;
-//     font-size: 25px;
-//     position: fixed;
-//     bottom: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 7%;
-//     color: rgb(252, 250, 250);
-// }
 
 h1{
     text-align: center;
@@ -162,3 +144,18 @@ input{
     color: rgb(0, 0, 0);
     font-weight: bold;
 }   
+
+.login_logout{
+    display: block;
+   top: 0;
+   right: 10px;
+   color: white;
+   grid-area: login_logout; 
+   padding-left: 4px;
+}
+.greeting_register{
+    grid-area: greeting;
+    text-align: right;
+    padding-right: 7px;
+    color: white;
+}
