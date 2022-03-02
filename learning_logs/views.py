@@ -11,6 +11,11 @@ def index(request):
     return render(request, 'learning_logs/index.html')
 
 
+def check_topic_owner(request, topic):
+    if topic.owner != request.user:
+        raise Http404
+
+
 @login_required
 def form(request):
     """Форма для создание заметок"""
@@ -30,8 +35,7 @@ def topics(request):
 def topic(request, topic_id):
     """Выводит одну тему и все ее записи"""
     topic = Topic.objects.get(id=topic_id)
-    if topic.owner != request.user:
-        raise Http404
+    check_topic_owner(request, topic)
     entries = topic.entry_set.order_by('-date_added')
     context = {'topic': topic, 'entries': entries}
     return render(request, 'learning_logs/topic.html', context)
@@ -61,6 +65,7 @@ def new_topic(request):
 def new_entry(request, topic_id):
     """Добавляет новую запись по конкретной теме."""
     topic = Topic.objects.get(id=topic_id)
+    check_topic_owner(request, topic)
     if request.method != 'POST':
         # Данные не отправлялись; создается пустая форма.
         form = EntryForm()
@@ -81,10 +86,9 @@ def new_entry(request, topic_id):
 @login_required
 def edit_entry(request, entry_id):
     """Редактирует существующую запись."""
-    entry = Entry.objects.get(id=entry_id)  # 1
+    entry = Entry.objects.get(id=entry_id)
     topic = entry.topic
-    if topic.owner != request.user:
-        raise Http404
+    check_topic_owner(request, topic)
     if request.method != 'POST':
         # Исходный запрос; форма заполняется данными текущей записи.
         form = EntryForm(instance=entry)
